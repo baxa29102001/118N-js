@@ -1,86 +1,37 @@
-// const name = {};
+//Dom bilan aloqa
+// const btnShowMessage = document.getElementById("btn"); // elementni id orqali olish
+// const btnShowMessage = document.getElementsByClassName("btn"); // elementni class orqali olish
+const btnShowMessage = document.querySelector(".container .btn");
+//Es 5
+function showMyMessage(e) {
+  // e.target.style.backgroundColor
+  //   btnShowMessage.style.backgroundColor = "red";
+  //   e.target.style.backgroundColor = "red";
+  //   e.target.style.color = "white";
+  //   document.body.style.backgroundColor = "black";
+  //   e.target.classList.add("node");
+  if (e.target.classList.contains("node")) {
+    e.target.classList.remove("node");
+  } else {
+    e.target.classList.add("node");
+  }
+}
 
-// console.log(typeof name);
+// const showMyMessage = (event) => {
+//   console.log(parametr);
+// };
 
-// let a = "5";
-// let b = "4";
+btnShowMessage.addEventListener("click", showMyMessage);
 
-// let result = a + b;
+function getDarajaQiymat(num = 1) {
+  return num ** 2;
+}
 
-// let num = 2;
-// // num += 5; // -> num = num +5
-
-// // num **= 5; num = num  ** 5
-
-// num++; // post prefiks
-// ++num; // prefix
-// console.log(num);
-
-// let num = 1;
-
-// alert(num++) // eski qiymatni qaytarib beradi.
-
-// alert(++num); // yangi qiymatni qaytarib beradi.
-
-// let a = 1,
-//   b = 1;
-
-// let c = ++a;
-// let d = b++;
-
-// console.log("c -> ", c, "d ->", d);
-
-// let bool = "Bohodir" === "bohodir";
-
-// console.log(bool);
-
-// Falsy qiymatlar: 0,false,undefined,null,"",NaN
-
-// console.log("bohodir".length);
-//
-// if (false) {
-//   console.log("True qiymati");
-// } else if (true) {
-//   console.log("Yana 2 true degan qiymat");
-// } else {
-//   console.log("False qiymat boladi");
-// }
-
-// let age = prompt("Sizning yoshingiz nechida");
-
-// let result =
-//   age < 3
-//     ? "Hi baby"
-//     : age < 18
-//     ? "Hello!"
-//     : age < 100
-//     ? "Greetings"
-//     : "Ovoz bermasin";
-
-// let result = age === 18;
+console.log(getDarajaQiymat(4));
+console.log(getDarajaQiymat(5));
+console.log(getDarajaQiymat(10));
+// console.log(getDarajaQiymat(5));
+// console.log(getDarajaQiymat(2));
+// console.log(getDarajaQiymat(1));
 
 // console.log(result);
-
-// if (true || false) {
-
-// } else {
-// }
-
-// let result = 0 || 3 || 7;
-
-// if (0 || 3) {
-//   console.log("Truethy qiymat");
-// } else {
-//   console.log("Falsy qiymant");
-// }
-
-// let result = 0 && 0 && 6;
-
-// if (result) {
-//   console.log("Truety qiymat");
-// } else {
-//   console.log("Falsy qiymat");
-// }
-
-// console.log(!!undefined);
-// alert(alert(1) || 2 || alert(3));
