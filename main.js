@@ -1,86 +1,94 @@
-// const name = {};
+// ES 5
 
-// console.log(typeof name);
+// Function declaration
+// showMyMessage();
 
-// let a = "5";
-// let b = "4";
-
-// let result = a + b;
-
-// let num = 2;
-// // num += 5; // -> num = num +5
-
-// // num **= 5; num = num  ** 5
-
-// num++; // post prefiks
-// ++num; // prefix
-// console.log(num);
-
-// let num = 1;
-
-// alert(num++) // eski qiymatni qaytarib beradi.
-
-// alert(++num); // yangi qiymatni qaytarib beradi.
-
-// let a = 1,
-//   b = 1;
-
-// let c = ++a;
-// let d = b++;
-
-// console.log("c -> ", c, "d ->", d);
-
-// let bool = "Bohodir" === "bohodir";
-
-// console.log(bool);
-
-// Falsy qiymatlar: 0,false,undefined,null,"",NaN
-
-// console.log("bohodir".length);
-//
-// if (false) {
-//   console.log("True qiymati");
-// } else if (true) {
-//   console.log("Yana 2 true degan qiymat");
-// } else {
-//   console.log("False qiymat boladi");
+// function showMyMessage() {
+//   console.log("Hello world");
 // }
 
-// let age = prompt("Sizning yoshingiz nechida");
+// Function Expression
 
-// let result =
-//   age < 3
-//     ? "Hi baby"
-//     : age < 18
-//     ? "Hello!"
-//     : age < 100
-//     ? "Greetings"
-//     : "Ovoz bermasin";
+// const showMyMessage = function () {
+//   console.log("Hello World");
+// };
 
-// let result = age === 18;
+// showMyMessage();
 
-// console.log(result);
+// Function expression turiga kiruvchi lekin Es6 versiyasi arrow function deb nomlanadi.
+// const showMyMessage = () => {};
 
-// if (true || false) {
+// showMyMessage();
 
-// } else {
-// }
+// const sleepIn = (isWorkingDay, onVacation) => {
+//   if (!isWorkingDay || onVacation) {
+//     return true;
+//   }
 
-// let result = 0 || 3 || 7;
+//   return false;
+// };
 
-// if (0 || 3) {
-//   console.log("Truethy qiymat");
-// } else {
-//   console.log("Falsy qiymant");
-// }
+// console.log(sleepIn(true, true));
+// console.log(sleepIn(true, false));
+// console.log(sleepIn(false, false));
 
-// let result = 0 && 0 && 6;
+// const monkeyTrouble = (aSmile, bSmile) =>
+//   (aSmile && bSmile) || (!aSmile && !bSmile);
+// console.log(monkeyTrouble(true, true));
+// console.log(monkeyTrouble(false, false));
+// console.log(monkeyTrouble(true, false));
 
-// if (result) {
-//   console.log("Truety qiymat");
-// } else {
-//   console.log("Falsy qiymat");
-// }
+// const daraja = (a) => a ** 3;
 
-// console.log(!!undefined);
-// alert(alert(1) || 2 || alert(3));
+// switch case tushunchasi
+
+// const showStatus = (a) => {
+//   switch (a) {
+//     case 0:
+//       console.log("Created");
+//       break;
+//     case 1:
+//       console.log("ON the way");
+//       break;
+//     default:
+//       console.log("Default Value");
+//   }
+// };
+
+// showStatus(3);
+
+const emailInput = document.querySelector("#emailInput");
+
+const form = document.getElementById("form");
+const emailInputErorText = document.getElementById("emailInputErorText");
+
+emailInput.addEventListener("input", (e) => {
+  //   console.log(e.target.value);
+  //   console.log(emailInput.value);
+
+  if (e.target.value) {
+    emailInputErorText.textContent = "";
+    emailInput.style.border = "1px solid black";
+  }
+});
+
+function sendToData(e) {
+  e.preventDefault(); // browserni refresh bolishini oldini olish
+
+  if (!emailInput.value ) {
+    emailInput.style.border = "1px solid red";
+    emailInputErorText.textContent =
+      "Поле номер телефона обязательно для заполнения";
+    return;
+  }
+  alert("Salom men jonaydigan dataman");
+}
+
+form.addEventListener("submit", sendToData);
+
+
+
+
+
+
+
