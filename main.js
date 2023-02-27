@@ -59,35 +59,101 @@
 
 const emailInput = document.querySelector("#emailInput");
 
-const form = document.getElementById("form");
-const emailInputErorText = document.getElementById("emailInputErorText");
+// const form = document.getElementById("form");
+// const emailInputErorText = document.getElementById("emailInputErorText");
 
-emailInput.addEventListener("input", (e) => {
-  //   console.log(e.target.value);
-  //   console.log(emailInput.value);
+// emailInput.addEventListener("input", (e) => {
+//   //   console.log(e.target.value);
+//   //   console.log(emailInput.value);
 
-  if (e.target.value) {
-    emailInputErorText.textContent = "";
-    emailInput.style.border = "1px solid black";
+//   if (e.target.value) {
+//     emailInputErorText.textContent = "";
+//     emailInput.style.border = "1px solid black";
+//   }
+// });
+
+// function sendToData(e) {
+//   e.preventDefault(); // browserni refresh bolishini oldini olish
+
+//   if (!emailInput.value ) {
+//     emailInput.style.border = "1px solid red";
+//     emailInputErorText.textContent =
+//       "Поле номер телефона обязательно для заполнения";
+//     return;
+//   }
+//   alert("Salom men jonaydigan dataman");
+// }
+
+// form.addEventListener("submit", sendToData);
+
+// Methods haqida malumot
+
+// const obj = {
+//   name: "Bohodir",
+//   fullName() {
+//     // console.log(this.name);
+//     return this.name;
+//   },
+// };
+
+// console.log(obj.fullName());
+// console.dir(emailInput.classList.add());
+
+// const num = 0;
+
+// Slice methodi
+// const name = "Bohodir".slice(2, 5).includes("h");
+// // Slice methodi
+// const bInclude = "Bohodir".includes("Bo");
+
+// console.log(name);
+// console.log(bInclude);
+
+// function daraja(n) {
+//   return n ** 2;
+// }
+
+// for (let i = 10; i >= 0; i--) {
+//   // console.log(daraja(i));
+// }
+
+function stringTimes(str, num) {
+  for (let i = 0; i < num; i++) {
+    let result = "";
+    result = result + str;
   }
-});
+  console.log("ax");
 
-function sendToData(e) {
-  e.preventDefault(); // browserni refresh bolishini oldini olish
-
-  if (!emailInput.value ) {
-    emailInput.style.border = "1px solid red";
-    emailInputErorText.textContent =
-      "Поле номер телефона обязательно для заполнения";
-    return;
-  }
-  alert("Salom men jonaydigan dataman");
+  return result;
 }
 
-form.addEventListener("submit", sendToData);
+// console.log(stringTimes("hi", 2));
+// console.log(stringTimes("hi", 3));
 
+// function countXX(str){
 
+// }
 
+// let str = "abcxx";
+
+// console.log(str[1]);
+
+// for (let i = 0; i < str.length; i++) {
+//   // console.log(str[i]);
+// }
+
+function countX(str) {
+  let counter = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === "x") {
+      counter++;
+    }
+  }
+
+  console.log(counter - 1);
+}
+
+// countX("xxxx");
 
 
 
