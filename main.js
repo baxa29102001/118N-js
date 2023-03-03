@@ -1,160 +1,127 @@
-// ES 5
-
-// Function declaration
-// showMyMessage();
-
-// function showMyMessage() {
-//   console.log("Hello world");
+// for (let i = 0; i < arr.length; i++) {
+//   console.log(arr[i]);
 // }
 
-// Function Expression
+// "Bohodir".slice();
 
-// const showMyMessage = function () {
-//   console.log("Hello World");
-// };
-
-// showMyMessage();
-
-// Function expression turiga kiruvchi lekin Es6 versiyasi arrow function deb nomlanadi.
-// const showMyMessage = () => {};
-
-// showMyMessage();
-
-// const sleepIn = (isWorkingDay, onVacation) => {
-//   if (!isWorkingDay || onVacation) {
-//     return true;
+// function slice2(str, start, end) {
+//   let result = "";
+//   for (let i = start; i < end; i++) {
+//     result = result + str[i];
 //   }
 
-//   return false;
-// };
+//   console.log(result);
+// }
 
-// console.log(sleepIn(true, true));
-// console.log(sleepIn(true, false));
-// console.log(sleepIn(false, false));
+// slice2("Bohodir", 1, 4);
 
-// const monkeyTrouble = (aSmile, bSmile) =>
-//   (aSmile && bSmile) || (!aSmile && !bSmile);
-// console.log(monkeyTrouble(true, true));
-// console.log(monkeyTrouble(false, false));
-// console.log(monkeyTrouble(true, false));
+// console.log(arr.includes("Salom"));
 
-// const daraja = (a) => a ** 3;
-
-// switch case tushunchasi
-
-// const showStatus = (a) => {
-//   switch (a) {
-//     case 0:
-//       console.log("Created");
-//       break;
-//     case 1:
-//       console.log("ON the way");
-//       break;
-//     default:
-//       console.log("Default Value");
+// const searchElement = "sa";
+// for (let i = 0; i < arr.length; i++) {
+//   if (typeof arr[i] === "string") {
+//     console.log(arr[i].toLowerCase().includes(searchElement));
 //   }
-// };
+// }
 
-// showStatus(3);
+// console.log(arr.indexOf("Salom"));
 
-const emailInput = document.querySelector("#emailInput");
+// arr.forEach((item,index,arr2)=> {
+//   console.log(item)
 
-// const form = document.getElementById("form");
-// const emailInputErorText = document.getElementById("emailInputErorText");
+// })
 
-// emailInput.addEventListener("input", (e) => {
-//   //   console.log(e.target.value);
-//   //   console.log(emailInput.value);
-
-//   if (e.target.value) {
-//     emailInputErorText.textContent = "";
-//     emailInput.style.border = "1px solid black";
-//   }
+// const arrNums = [1, 2, 3, 5, 6, 8];
+// const arr2 = arrNums.map((item, index, arr) => {
+//   let result = item ** 2 + index;
+//   return result;
 // });
 
-// function sendToData(e) {
-//   e.preventDefault(); // browserni refresh bolishini oldini olish
+// console.log(arr2);
 
-//   if (!emailInput.value ) {
-//     emailInput.style.border = "1px solid red";
-//     emailInputErorText.textContent =
-//       "Поле номер телефона обязательно для заполнения";
-//     return;
+// const findelement = arr.find((item, index, obj) => item === 1);
+
+// console.log(findelement);
+// const arr = [0, "Salom", "Salom", "8 data type", {}, 233444555555, []];
+
+// const arr2 = arr.filter((item, index, array) => {
+//   return item !== "Salom";
+// });
+
+// console.log(arr2);
+// const form = document.querySelector("#form");
+
+// const emailInput = document.querySelector("#emailInput");
+// const list = document.querySelector("#list");
+
+// const todoAppText = [];
+// function createHtmlElements(e) {
+//   e.preventDefault();
+
+//   todoAppText.push(emailInput.value);
+
+//   let result = "";
+
+//   todoAppText.forEach((item, index) => {
+//     result = result + `<li class=""> ${item}</li>`;
+//   });
+
+//   list.innerHTML = result;
+// }
+
+// form.addEventListener("submit", createHtmlElements);
+
+// console.log(arr.push("Oxiriga qoshildim"));
+// console.log(arr);
+
+// function frontBack(str) {
+//   let result = "";
+//   for (let i = 0; i < str.length; i++) {
+//     if (i > 0 && i < str.length - 1) {
+//       result += str[i];
+//     }
 //   }
-//   alert("Salom men jonaydigan dataman");
+
+//   console.log(str[str.length - 1] + result + str[0]);
+
+//   return str[str.length - 1] + result + str[0];
 // }
 
-// form.addEventListener("submit", sendToData);
+// frontBack("code");
 
-// Methods haqida malumot
-
-// const obj = {
-//   name: "Bohodir",
-//   fullName() {
-//     // console.log(this.name);
-//     return this.name;
-//   },
-// };
-
-// console.log(obj.fullName());
-// console.dir(emailInput.classList.add());
-
-// const num = 0;
-
-// Slice methodi
-// const name = "Bohodir".slice(2, 5).includes("h");
-// // Slice methodi
-// const bInclude = "Bohodir".includes("Bo");
-
-// console.log(name);
-// console.log(bInclude);
-
-// function daraja(n) {
-//   return n ** 2;
-// }
-
-// for (let i = 10; i >= 0; i--) {
-//   // console.log(daraja(i));
-// }
-
-function stringTimes(str, num) {
-  for (let i = 0; i < num; i++) {
-    let result = "";
-    result = result + str;
-  }
-  console.log("ax");
-
-  return result;
-}
-
-// console.log(stringTimes("hi", 2));
-// console.log(stringTimes("hi", 3));
-
-// function countXX(str){
-
-// }
-
-// let str = "abcxx";
-
-// console.log(str[1]);
-
-// for (let i = 0; i < str.length; i++) {
-//   // console.log(str[i]);
-// }
-
-function countX(str) {
-  let counter = 0;
+function delDel(str) {
+  let result = "";
   for (let i = 0; i < str.length; i++) {
-    if (str[i] === "x") {
-      counter++;
+    if (i > 0 && i < 4 && str[1] === "d") {
+      if (str.slice(1, 4) === "del") {
+        // console.log("Ha");
+      }
+    } else {
+      result += str[i];
     }
   }
 
-  console.log(counter - 1);
+  console.log(result);
 }
 
-// countX("xxxx");
+// delDel("adelbc");
+// delDel("abcdel");
 
+function hashPlasticCard(numbers, position) {
+  let result = "";
+  for (let index = 0; index < numbers.length; index++) {
+    if (index < position) {
+      result += numbers[index];
+    } else {
+      result += "#";
+    }
+  }
 
+  console.log(result);
+}
 
+hashPlasticCard("986000007878787", 5);
 
+// const arr = [0, "Bohodir", 0];
+
+// arr.find((item) => item);
