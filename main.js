@@ -1,127 +1,129 @@
-// for (let i = 0; i < arr.length; i++) {
-//   console.log(arr[i]);
-// }
+// const arr = [0, 1, "String", true, false, 999989989898989, {}, []];
+// const arr2 = arr;
+// Elemetni oxiridan qoshib beradi
 
-// "Bohodir".slice();
+// console.log(arr2.push("Eng oxirgi qoshiluchi elements"));
 
-// function slice2(str, start, end) {
-//   let result = "";
-//   for (let i = start; i < end; i++) {
-//     result = result + str[i];
-//   }
-
-//   console.log(result);
-// }
-
-// slice2("Bohodir", 1, 4);
-
-// console.log(arr.includes("Salom"));
-
-// const searchElement = "sa";
-// for (let i = 0; i < arr.length; i++) {
-//   if (typeof arr[i] === "string") {
-//     console.log(arr[i].toLowerCase().includes(searchElement));
-//   }
-// }
-
-// console.log(arr.indexOf("Salom"));
-
-// arr.forEach((item,index,arr2)=> {
-//   console.log(item)
-
-// })
-
-// const arrNums = [1, 2, 3, 5, 6, 8];
-// const arr2 = arrNums.map((item, index, arr) => {
-//   let result = item ** 2 + index;
-//   return result;
-// });
-
-// console.log(arr2);
-
-// const findelement = arr.find((item, index, obj) => item === 1);
-
-// console.log(findelement);
-// const arr = [0, "Salom", "Salom", "8 data type", {}, 233444555555, []];
-
-// const arr2 = arr.filter((item, index, array) => {
-//   return item !== "Salom";
-// });
-
-// console.log(arr2);
-// const form = document.querySelector("#form");
-
-// const emailInput = document.querySelector("#emailInput");
-// const list = document.querySelector("#list");
-
-// const todoAppText = [];
-// function createHtmlElements(e) {
-//   e.preventDefault();
-
-//   todoAppText.push(emailInput.value);
-
-//   let result = "";
-
-//   todoAppText.forEach((item, index) => {
-//     result = result + `<li class=""> ${item}</li>`;
-//   });
-
-//   list.innerHTML = result;
-// }
-
-// form.addEventListener("submit", createHtmlElements);
-
-// console.log(arr.push("Oxiriga qoshildim"));
 // console.log(arr);
 
-// function frontBack(str) {
-//   let result = "";
-//   for (let i = 0; i < str.length; i++) {
-//     if (i > 0 && i < str.length - 1) {
-//       result += str[i];
-//     }
-//   }
+// Elementni oxiridan ochirib beradi
+// console.log(arr2.pop());
+// console.log(arr);
+// Elementni boshidan ochiriib berarakan
+// console.log(arr2.shift());
 
-//   console.log(str[str.length - 1] + result + str[0]);
+// console.log(arr2);
 
-//   return str[str.length - 1] + result + str[0];
+// Elementni boshidan qoshib berarkan
+
+// console.log(arr2.unshift("Salom man birinchilardan qoshildim"));
+
+// console.log(arr2);
+
+// Elementni har yerdan qoshish uchun splice degan method kerak
+
+// console.log(arr2.splice(0, 1, 3, 5, 6));
+
+// console.log(arr);
+
+// console.log(arr2.slice(0, 2));
+
+// console.log(arr);
+
+// let result = [];
+// for (let i = 0; i < name.length; i++) {
+//   result.push(name[i]);
 // }
+// let name = "Saluomuuuqalesila";
 
-// frontBack("code");
+// console.log(name.split("u"));
 
-function delDel(str) {
+// console.log(arr.join("-"));
+// let qiymat = "gender";
+
+// let person = {
+//   name: "Shavkat",
+//   age: 20,
+//   gender: "male",
+
+//   subjects: {
+//     sports: ["rUNING"],
+//   },
+// };
+
+// console.log(person[qiymat]);
+
+// person[qiymat] = "Salom";
+
+// console.log(person);
+
+// delete person.age;
+
+// console.log(person);
+
+const form = document.getElementById("form");
+const input = document.getElementById("input");
+const list = document.getElementById("list");
+let todoApptext = [];
+let index = 0;
+function createHtmlElemenets(e) {
+  e.preventDefault();
+
+  todoApptext.push({
+    text: input.value,
+    id: index,
+  });
+
+  index++;
+
   let result = "";
-  for (let i = 0; i < str.length; i++) {
-    if (i > 0 && i < 4 && str[1] === "d") {
-      if (str.slice(1, 4) === "del") {
-        // console.log("Ha");
-      }
-    } else {
-      result += str[i];
-    }
-  }
 
-  console.log(result);
+  todoApptext.forEach((item, index) => {
+    result =
+      result +
+      `<li class="item"> ${item.text}
+
+    <img class="krug"  src="./img/green_krug.svg" alt="icon">
+    <img class=" icon" src="./img/delete.svg" onclick="removeTodoApp(${item.id})" alt="icon"> </li>`;
+  });
+
+  // const li = document.createElement("li");
+  // li.setAttribute("class", "item");
+  // let listContent = document.createElement("div");
+  // todoApptext.forEach((item) => {
+  //   const li = document.createElement("li");
+  //   li.setAttribute("class", "item");
+
+  //   const img = document.createElement("img");
+  //   img.setAttribute("src", "./img/green_krug.svg");
+  //   const p = document.createElement("p");
+  //   p.textContent = item;
+  //   li.appendChild(p);
+  //   li.appendChild(img);
+  //   console.log(li);
+  //   // result += li;
+  //   listContent.appendChild(li);
+  // });
+  // console.log(listContent);
+  // list.replaceChildren(listContent);
+
+  list.innerHTML = result;
 }
+form.addEventListener("submit", createHtmlElemenets);
 
-// delDel("adelbc");
-// delDel("abcdel");
-
-function hashPlasticCard(numbers, position) {
+function removeTodoApp(id) {
+  todoApptext = todoApptext.filter((item) => item.id !== id);
+  console.log(todoApptext);
   let result = "";
-  for (let index = 0; index < numbers.length; index++) {
-    if (index < position) {
-      result += numbers[index];
-    } else {
-      result += "#";
-    }
-  }
 
-  console.log(result);
+  todoApptext.forEach((item, index) => {
+    result =
+      result +
+      `<li class="item"> ${item.text}
+
+    <img class="krug"  src="./img/green_krug.svg" alt="icon">
+    <img class=" icon" src="./img/delete.svg" onclick="removeTodoApp(${item.id})" alt="icon"> </li>`;
+  });
+
+  list.innerHTML = result;
 }
-
-hashPlasticCard("986000007878787", 5);
-
-// const arr = [0, "Bohodir", 0];
-
-// arr.find((item) => item);
