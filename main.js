@@ -1,40 +1,78 @@
-// let name = 17;
+const btn = document.querySelector("#next");
+const before = document.querySelector("#Before");
+const carousel_container = document.querySelector(".carousel_container");
 
-// let bool = true
+// btn.addEventListener("click", () => {
+//   carousel_container.style.transform = "translateX(-400px)";
+// });
 
-// alert()
+// window.SpeechRecognition =
+//   window.SpeechRecognition || window.webkitSpeechRecognition;
+// const recognition = new window.SpeechRecognition();
+// recognition.interimResults = true;
+// recognition.lang = "en-US";
 
-// function name(){}
+// btn.addEventListener("click", () => {
+//   recognition.start();
+// });
 
-// name()
-// let name = "Bohodir ";
-// let lastName = "Rahmonov";
-// let fullName = `${name} ${lastName}`;
+// recognition.addEventListener("result", (e) => {
+//   console.log(
+//     Array.from(e.results)
+//       .map((item) => item[0])
+//       .map((item) => item.transcript)
+//       .join(" ")
+//   );
 
-// let fullName = name + lastName;
+//   console.log(e.results[0]);
+// });
 
-// let inputValue = prompt("Sizning yoshingiz", "22");
-// console.log(+inputValue);
+// recognition.addEventListener("end", () => {
+//   recognition.start();
+// });
 
-// let name = "Bohodir";
-// let result = name - "b";
+// function repeatSeparator(word, seperator, count) {
+//   let result = "";
 
-// let a = 5;
-// let b = 3;
+//   for (let i = 0; i < count; i++) {
+//     if (i < count - 1) {
+//       result += word + seperator;
+//     } else {
+//       result += word;
+//     }
+//   }
 
-// prompt("Son Kiriting");
+//   return result;
+// }
 
-// let result = a % 3;
+// console.log(repeatSeparator("Word", "X", 3));
+// console.log(repeatSeparator("This", "And", 2));
+// console.log(repeatSeparator("This", "And", 1));
+// function getSandwich(str) {
+//   let result = str;
 
-let a = 5;
-let b = 5;
+//   for (let i = 0; i < result.length; i++) {
+//     if (result[i] === "b") {
+//       if (result.slice(i, i + 5) === "bread") {
+//         result = choppedString(result, i, i + 5);
+//         // i = 0;
+//       }
+//     }
+//   }
 
-if (a == b) {
-  console.log("Ha teng");
-} else {
-  console.log("Teng emas");
-}
+//   console.log(result);
+// }
 
-// let count;
+// function choppedString(str, start, end) {
+//   let result = "";
 
-// console.log(count + 3);
+//   for (let i = 0; i < str.length; i++) {
+//     if (!(start <= i && i < end)) {
+//       result += str[i];
+//     }
+//   }
+
+//   return result;
+// }
+
+// getSandwich("xxbreadyy");
