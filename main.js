@@ -64,8 +64,21 @@
 const form = document.getElementById("form");
 const input = document.getElementById("input");
 const list = document.getElementById("list");
-let todoApptext = [];
+const modalaayer = document.querySelector(".modalaayer");
+const editedInput = document.querySelector("#editedInput");
+const editForm = document.querySelector("#editForm");
+
+let todoApptext = [
+  {
+    text: "Salom",
+    id: 99999999,
+  },
+];
 let index = 0;
+
+let editItem;
+
+renderHtmlElements();
 function createHtmlElemenets(e) {
   e.preventDefault();
 
@@ -76,16 +89,7 @@ function createHtmlElemenets(e) {
 
   index++;
 
-  let result = "";
-
-  todoApptext.forEach((item, index) => {
-    result =
-      result +
-      `<li class="item"> ${item.text}
-
-    <img class="krug"  src="./img/green_krug.svg" alt="icon">
-    <img class=" icon" src="./img/delete.svg" onclick="removeTodoApp(${item.id})" alt="icon"> </li>`;
-  });
+  renderHtmlElements();
 
   // const li = document.createElement("li");
   // li.setAttribute("class", "item");
@@ -106,14 +110,9 @@ function createHtmlElemenets(e) {
   // });
   // console.log(listContent);
   // list.replaceChildren(listContent);
-
-  list.innerHTML = result;
 }
-form.addEventListener("submit", createHtmlElemenets);
 
-function removeTodoApp(id) {
-  todoApptext = todoApptext.filter((item) => item.id !== id);
-  console.log(todoApptext);
+function renderHtmlElements() {
   let result = "";
 
   todoApptext.forEach((item, index) => {
@@ -121,9 +120,105 @@ function removeTodoApp(id) {
       result +
       `<li class="item"> ${item.text}
 
-    <img class="krug"  src="./img/green_krug.svg" alt="icon">
+    <img class="krug"  src="./img/green_krug.svg" onclick="showModal(${item.id})" alt="icon">
     <img class=" icon" src="./img/delete.svg" onclick="removeTodoApp(${item.id})" alt="icon"> </li>`;
   });
 
   list.innerHTML = result;
 }
+form.addEventListener("submit", createHtmlElemenets);
+
+function removeTodoApp(id) {
+  todoApptext = todoApptext.filter((item) => item.id !== id);
+
+  renderHtmlElements();
+}
+
+function showModal(id) {
+  modalaayer.style.display = "flex";
+
+  let findEndObject = todoApptext.find((item) => {
+    return item.id === id;
+  });
+  let findEndObjectIndex = todoApptext.findIndex((item) => {
+    return item.id === id;
+  });
+  editedInput.value = findEndObject.text;
+
+  editItem = {
+    index: findEndObjectIndex,
+    id: id,
+  };
+}
+
+function editFormHandler(e) {
+  e.preventDefault();
+
+  todoApptext.splice(editItem.index, 1, {
+    text: editedInput.value,
+    id: editItem.id,
+  });
+
+  modalaayer.style.display = "none";
+  renderHtmlElements();
+}
+
+editForm.addEventListener("submit", editFormHandler);
+modalaayer.addEventListener("click", (e) => {
+  console.log(e.target);
+  if (e.target == modalaayer) modalaayer.style.display = "none";
+});
+
+const arr = ["Yanvar", "Fevral", "Mart"];
+// console.log(new Date().getFullYear());
+// console.log(new Date().getDay());
+// console.log(arr[new Date().getMonth()]);
+// console.log(
+//   `${new Date("2030-01-31T19:00:00").getFullYear()}.${new Date(
+//     "2030-01-31T19:00:00"
+//   ).getMonth()}`
+// );
+
+// let d = new Date("2030-01-31T19:10:00");
+
+// let datestring =
+//   d.getDate() +
+//   "." +
+//   (d.getMonth() + 1) +
+//   "." +
+//   d.getFullYear() +
+//   " " +
+//   d.getHours() +
+//   ":";
+// console.log(d.getMinutes());
+// if (
+//   d.getMinutes().toString().length === 1 &&
+//   d.getMinutes().toString() === "0"
+// ) {
+//   datestring += "00";
+// } else {
+//   datestring += d.getMinutes();
+// }
+// // 16.5.2015 9:50
+
+// console.log(datestring);
+
+// console.log("00004555555".padStart(15, "#"));
+
+// const person = {
+//   name: "Shavkat",
+//   age: 20,
+//   gender: "Male",
+// };
+
+// for (let key in person) {
+//   console.log(person[key]);
+// }
+
+// console.log();
+
+// Object.keys(person).forEach((item) => {
+//   console.log(person[item]);
+// });
+
+// console.log(Object.values(person));
