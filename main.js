@@ -1,35 +1,48 @@
 const btn = document.querySelector("#next");
 const before = document.querySelector("#Before");
 const carousel_container = document.querySelector(".carousel_container");
+const carousel_containerImages = document.querySelectorAll(
+  ".carousel_container img"
+);
+let index = 0;
+btn.addEventListener("click", () => {
+  index++;
+  carousel_container.style.transition = "transform 0.5s ease-in-out";
+  carousel_container.style.transform = `translateX(-${index * 400}px)`;
+});
 
-// btn.addEventListener("click", () => {
-//   carousel_container.style.transform = "translateX(-400px)";
-// });
+carousel_container.addEventListener("transitionend", (e) => {
+  if (carousel_containerImages[index].id === "lastElement") {
+    index = 0;
+    carousel_container.style.transition = "none";
+    carousel_container.style.transform = `translateX(-${index * 400}px)`;
+  }
+});
 
-// window.SpeechRecognition =
-//   window.SpeechRecognition || window.webkitSpeechRecognition;
-// const recognition = new window.SpeechRecognition();
-// recognition.interimResults = true;
-// recognition.lang = "en-US";
+window.SpeechRecognition =
+  window.SpeechRecognition || window.webkitSpeechRecognition;
+const recognition = new window.SpeechRecognition();
+recognition.interimResults = true;
+recognition.lang = "en-US";
 
-// btn.addEventListener("click", () => {
-//   recognition.start();
-// });
+btn.addEventListener("click", () => {
+  recognition.start();
+});
 
-// recognition.addEventListener("result", (e) => {
-//   console.log(
-//     Array.from(e.results)
-//       .map((item) => item[0])
-//       .map((item) => item.transcript)
-//       .join(" ")
-//   );
+recognition.addEventListener("result", (e) => {
+  console.log(
+    Array.from(e.results)
+      .map((item) => item[0])
+      .map((item) => item.transcript)
+      .join(" ")
+  );
 
-//   console.log(e.results[0]);
-// });
+  console.log(e.results[0]);
+});
 
-// recognition.addEventListener("end", () => {
-//   recognition.start();
-// });
+recognition.addEventListener("end", () => {
+  recognition.start();
+});
 
 // function repeatSeparator(word, seperator, count) {
 //   let result = "";
@@ -76,3 +89,20 @@ const carousel_container = document.querySelector(".carousel_container");
 // }
 
 // getSandwich("xxbreadyy");
+
+function zipZap(str) {
+  let result = "";
+
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === "z" && str[i + 2] === "p") {
+      result += str[i];
+      i += 2;
+    } else {
+      result += str[i];
+    }
+  }
+
+  console.log(result);
+}
+
+zipZap("zipXzap");
