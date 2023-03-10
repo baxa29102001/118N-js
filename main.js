@@ -53,6 +53,40 @@
 
 // console.log("90909090".replace(regex, "#"));
 
+const next = document.querySelector("#next");
+const carousel_container = document.querySelector(".carousel_container");
+const carousel_containerImages = document.querySelectorAll(
+  ".carousel_container img"
+);
+const before = document.querySelector("#before");
 
+let index = 0;
 
+next.addEventListener("click", () => {
+  index++;
 
+  // if (index > carousel_containerImages.length - 1) {
+  //   index = 0;
+  //   carousel_container.style.transition = "none";
+  //   slideCarousel();
+  // }
+
+  slideCarousel();
+});
+before.addEventListener("click", () => {
+  index--;
+  slideCarousel();
+});
+
+function slideCarousel() {
+  carousel_container.style.transition = "transform 0.5s ease-in-out";
+  carousel_container.style.transform = `translateX(-${index * 400}px)`;
+}
+
+carousel_container.addEventListener("transitionend", () => {
+  if (carousel_containerImages[index].id === "lastElement") {
+    index = 0;
+    carousel_container.style.transition = "none";
+    carousel_container.style.transform = `translateX(-${index * 400}px)`;
+  }
+});

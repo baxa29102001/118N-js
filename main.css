@@ -8,7 +8,7 @@
 
 .carousel_container {
   display: flex;
-  transform: translateX(-400px);
+  transform: translateX(0px);
 
-  /* transition: transform 0.5s ease-in-out; */
+  transition: transform 0.5s ease-in-out;
 }
