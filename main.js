@@ -1,82 +1,111 @@
-// window.SpeechRecognition =
-//   window.SpeechRecognition || window.webkitSpeechRecognition;
-// const start = document.querySelector("#start");
-// const end = document.querySelector("#end");
-// const list = document.querySelector("#list");
-// const recognition = new window.SpeechRecognition();
-// recognition.interimResults = true;
-// recognition.lang = "en-US";
+// function name(){}
 
-// let stop = false;
-// recognition.addEventListener("result", (e) => {
-//   if (e.results[0].isFinal) {
-//     const arr = Array.from(e.results[0])
-//       .map((item) => item.transcript)
-//       .join("");
+// const arrowFunc =() => {}
 
-//     const li = document.createElement("li");
-//     li.textContent = arr;
+// if (true) {
+//   var name2 = "Bohodir";
 
-//     list.appendChild(li);
-//   }
-// });
-
-// recognition.addEventListener("end", (e) => {
-//   if (!stop) {
-//     recognition.start();
-//   }
-// });
-
-// start.addEventListener("click", () => {
-//   recognition.start();
-// });
-// end.addEventListener("click", () => {
-//   recognition.stop();
-
-//   stop = true;
-// });
-
-// function zipZap(str) {
-//   let result = "";
-
-//   for (let i = 0; i < str.length; i++) {
-//     if (str[i] === "z" && str[i + 2] === "p") {
-//       result += str[i] + str[i + 2];
-//       i += 2;
-//     } else {
-//       result += str[i];
-//     }
-//   }
-
-//   console.log(result);
-//   return result;
+//   console.log(name2);
+// } else {
+//   console.log(name2);
 // }
 
-// zipZap("zipXzap");
+// console.log(name2);
 
-function salom(memoryValue) {
-  let counter = memoryValue;
+// function showVariable() {
+//   var name2 = "Bohodir";
 
-  return function (num) {
-    if (counter === num) {
-      return "Siz Javobni topdingiz";
-    }
+//   console.log(name2);
+// }
 
-    if (num > counter) {
-      return "Siz kichkinaroq raqam ayting ayting";
-    }
-    if (num < counter) {
-      return "Siz katarroq raqam ayting ayting";
-    }
-  };
+// showVariable();
+
+// console.log(name2);
+
+// if (true) {
+//   let name2 = "Bohodir";
+// }
+
+// console.log(name2);
+
+// for (let i = 0; i < 4; i++) {
+//   console.log(i);
+// }
+
+// console.log(i);
+// name2 = "Bohodir";
+
+// let name2;
+
+// console.log(name2);
+
+// let name2 = "Bohodir";
+
+// name2 = "Akmal";
+
+// console.log(name2);
+
+// {
+
+//     name2: 'Bohodir'
+// }
+
+// function counter(num) {
+//   let count = num;
+//   return function (num2) {
+//     return count + num2;
+//   };
+// }
+
+// console.log(Math.floor(Math.random() * 100));
+
+// let makerCounter = counter(Math.floor(Math.random() * 100));
+
+// (function () {
+//   console.log("Salom men oz ozidan ishlovchi funksiyaman");
+// // })();
+
+// function makeWorker() {
+//   let name = "Pete";
+
+//   return function () {
+//     alert(name);
+//   };
+// }
+
+// let name = "John";
+
+// // create a function
+// let work = makeWorker();
+
+// // call it
+// work();
+
+// let phrase = "Hello";
+
+// if (true) {
+//   let user = "John";
+
+//   let sayHi = function () {
+//     alert(phrase);
+//   };
+// }
+
+// sayHi();
+
+function split(string, delimiter) {
+  var result = [];
+  var startIndex = 0;
+  var index = string.indexOf(delimiter);
+
+  while (index !== -1) {
+    result.push(string.slice(startIndex, index));
+    startIndex = index + delimiter.length;
+    index = string.indexOf(delimiter, startIndex);
+  }
+
+  result.push(string.slice(startIndex));
+  return result;
 }
 
-// let makeCounter = salom(10);
-
-// let num = 0;
-// while (makeCounter(num) !== "Siz Javobni topdingiz") {
-//   num = +prompt("Son ayting");
-//   console.log(makeCounter(num));
-// }
-
-// console.log(this.salom);
+console.log(split("Salom dostim qalesan", " "));
