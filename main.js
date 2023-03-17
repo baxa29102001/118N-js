@@ -109,3 +109,43 @@ function split(string, delimiter) {
 }
 
 console.log(split("Salom dostim qalesan", " "));
+// let index = 0;
+// function findNum() {
+//   if (index === 3) return;
+//   index++;
+
+//   findNum();
+// }
+
+// findNum();
+
+function findNum() {
+  let userNum = +prompt("User oylagan son");
+
+  return function (num) {
+    if (num === userNum) {
+      return "Tog'ri topdingiz";
+    }
+
+    if (num > userNum) {
+      return "Siz kichkinaroq son oylang";
+    } else {
+      return "Siz kattaroq son oylang";
+    }
+  };
+}
+
+// findNum();
+// let expectation = +prompt("Taxmin qilib koring yana");
+
+// // console.log(findNumUser(46));
+// while (findNumUser(expectation) !== "Tog'ri topdingiz") {
+//   expectation = +prompt("Taxmin qilib koring yana");
+
+//   console.log(findNumUser(expectation));
+// }
+
+
+
+
+
